@@ -10,9 +10,7 @@
 <% end %>
 
 <% @post.users.distinct.each do |user| %>
-  <li>
     <%= link_to user.username, user_path(user) %>
-  </li>
 <% end %>
 
 <%= form_for @post.comments.build do |f| %>
