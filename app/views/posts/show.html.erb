@@ -15,5 +15,8 @@
   <%= f.hidden_field :post_id, value: @post.id %>
   <%= f.submit %>
   
+  <%= f.fields_for :user, User.new do |user_fields| %>
+    <%= user_fields.text_field :username %>
+  <% end %>
   
 <% end %>
