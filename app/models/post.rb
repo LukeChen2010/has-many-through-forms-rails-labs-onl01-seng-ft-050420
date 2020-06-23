@@ -6,8 +6,8 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :categories
  
   def categories_attributes=(category_attributes)
-      if category_attribute["name"].present?
-        category = Category.find_or_create_by(category_attribute)
+      if category_attribute[:name]
+        category = Category.find_or_create_by(name: category_attribute[:name])
         self.categories << category
       end
   end
